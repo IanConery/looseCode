@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><!--appUrl:"http://172.28.21.11/dglux5"--><!--projUrl:"http://172.28.21.11/dgfs/proj"--><!--size:"660,550"--><head>
+    <meta charset="utf-8">
+    <title localize="">PDF Export</title></head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="http://parall.ax/parallax/js/jspdf.js"></script>
+
+
+    <body>
+
+          <canvas id="myCanvas" width="578" height="200"></canvas><img src="" id="img" width=0 height=0>
+<script>
+var xhr = new XMLHttpRequest();
+function loadCanvas(image) {
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+
+    // load image
+    context.drawImage(image, 0, 0);
+
+        var imgData = canvas.toDataURL("image/jpeg", 1.0);
+      var pdf = new jsPDF();
+
+      pdf.addImage(imgData, 'JPEG', 0, 0);
+      pdf.save("download.pdf");
+}
+
+xhr.onreadystatechange = function(){
+    if (this.readyState == 4 && this.status == 200){
+        var img = document.getElementById('img');
+        var url = window.URL || window.webkitURL;
+        img.onload = function(){
+            loadCanvas(this);
+        }
+        img.src = url.createObjectURL(this.response);
+    }
+}
+xhr.open('POST', "http://127.0.0.1:8080/dgexport?format=png");
+xhr.withCredentials = true;
+xhr.responseType = 'blob';
+xhr.send($.param({data: localStorage.getItem("dg::export")}));
+
+
+
+</script>
+
+
+</body></html>
