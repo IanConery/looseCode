@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <title>Charting</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="cache-control" content="max-age=0">
+    <meta http-equiv="cache-control" content="no-cache">
+
+    <link rel="shortcut icon" href="img/favicon.ico" />
+
+    <style>
+    body, html{
+    margin: 0; padding: 0;   overflow: hidden; height:100%
+    }
+    #bodyHome{
+     position:absolute; left: 0; right: 0; bottom: 0; top: 0px;
+    }
+    .container{
+    width:100%;
+    height:100%
+
+    }
+    iframe{
+    width:100%;
+    height:100%;
+    border: 0 0 0 0;
+    }
+    ::-webkit-scrollbar {
+    display: none;
+    }
+    </style>
+
+<script>
+function clientSideInclude(id, url) {
+  var req = false;
+  // For Safari, Firefox, and other non-MS browsers
+  if (window.XMLHttpRequest) {
+    try {
+      req = new XMLHttpRequest();
+    } catch (e) {
+      req = false;
+    }
+  } else if (window.ActiveXObject) {
+    // For Internet Explorer on Windows
+    try {
+      req = new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {
+      try {
+        req = new ActiveXObject("Microsoft.XMLHTTP");
+      } catch (e) {
+        req = false;
+      }
+    }
+  }
+ var element = document.getElementById(id);
+ if (!element) {
+  alert("Bad id " + id +
+   "passed to clientSideInclude." +
+   "You need a div or span element " +
+   "with this id in your page.");
+  return;
+ }
+  if (req) {
+    // Synchronous request, wait till we have it all
+    req.open('GET', url, false);
+    req.send(null);
+    element.innerHTML = req.responseText;
+  } else {
+    element.innerHTML =
+   "Sorry, your browser does not support " +
+      "XMLHTTPRequest objects. This page requires " +
+      "Internet Explorer 5 or better for Windows, " +
+      "or Firefox for any system, or Safari. Other " +
+      "compatible browsers may also exist.";
+  }
+}
+</script>
+</head>
+<body id="bodyHome" onLoad="clientSideInclude('includeone', '/dglux5/viewer.html?proj=tenantBilling_1F04&path=release_v1%2FTenantEye_Home.dg5 ')">
+
+</body>
+</html>
