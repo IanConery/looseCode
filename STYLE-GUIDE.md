@@ -2,8 +2,9 @@
 
 When writing any block of code that is logically subordinate to the line immediately before and after it, that block should be indented two spaces more than the surrounding lines
 
+* We use two spaces, we do not use tabs. Convert your tabs to spaces.
 * Do not put any tab characters anywhere in your code. We use spaces, two of them.
-* Increase the indent level for all blocks by two extra spaces
+* Increase the indent level for all blocks by two extra spaces.
     * When a line opens a block, the next line starts 2 spaces further in than the line that opened
 
         ```javascript
@@ -18,7 +19,7 @@ When writing any block of code that is logically subordinate to the line immedia
         }
         ```
 
-    * When a line closes a block, that line starts at the same level as the line that opened the block
+    * When a line closes a block, that line starts at the same level as the line that opened the block.
         ```javascript
         // good:
         if(condition){
@@ -34,7 +35,7 @@ When writing any block of code that is logically subordinate to the line immedia
     * No two lines should ever have more or less than 2 spaces difference in their indentation. Any number of mistakes in the above rules could lead to this, but one example would be:
 
         ```javascript
-        // bad:
+        // bad: b looks like a child of a, however it isn't, they are siblings
         transmogrify({
           a: {
             b: function(){
@@ -46,7 +47,7 @@ When writing any block of code that is logically subordinate to the line immedia
 
 ### Variable names
 
-* A single descriptive word is best.
+* A single descriptive word is best. But anything logicaly named works for me.
 
     ```javascript
     // good:
@@ -111,7 +112,7 @@ When writing any block of code that is logically subordinate to the line immedia
     ```
 
 * Always use `===` and `!==`, since `==` and `!=` will automatically convert types in ways you're unlikely to expect.
-* Unless you are ABSOLUTELY positive you know what you are doing and can explain how it works to a five year old.
+* Unless you are ABSOLUTELY positive you know what you are doing and you can explain how it works to a five year old.
 
     ```javascript
     // good:
@@ -129,20 +130,20 @@ When writing any block of code that is logically subordinate to the line immedia
     }
     ```
 
-* I prefer function expressions over function declarations, obviously there are times when it makes sense to use declarations I am not against them, so do what you will but I may ask you to fix/change your code to match the style.
+* I prefer function expressions over function declarations, obviously there are times when it makes sense to use declarations. I am not against them, so do what you will but I may ask you to fix/change your code to match the style.
 
     ```javascript
     // good:
     var go = function(){...};
 
-    // bad:
+    // not my favorite:
     function stop(){...};
     ```
 
 
 ### Semicolons
 
-* Don't forget semicolons at the end of lines. There will be no discussion about this.
+* Don't forget semicolons at the end of lines. There will be no discussion about this. We are not going to rely on the interpreter to put them where they belong for us.
 
   ```javascript
   // good:
@@ -208,15 +209,15 @@ When writing any block of code that is logically subordinate to the line immedia
     alert( "I only put visual padding on one side of this string");
     ```
 
-* Please do not align things visually using spaces, DO NOT do this. This pattern usually leads to unnecessary edits of many lines in your code every time you change a variable name.
+* Please do not align things visually using spaces, DO NOT do this. This pattern usually leads to unnecessary edits of many lines in your code every time you change a variable name. It also doesn't look as pretty as you would think.
 
     ```javascript
-    // discouraged:
+    // strongly discouraged:
     var firstItem  = getFirst ();
     var secondItem = getSecond();
     ```
 
-* Put `else` and `else if` statements on the same line as the ending curly brace for the preceding `if` block
+* Put `else` and `else if` statements on the same line as the ending curly brace for the preceding `if` block.
     ```javascript
     // good:
     if(condition){
@@ -238,14 +239,15 @@ When writing any block of code that is logically subordinate to the line immedia
 
 ### Working with files
 
-* Do not end a file with any character other than a newline. This is not a problem if you have [configured git correctly][] and you are using the [.editorconfig](https://github.com/IanConery/DeadDrop/blob/master/.editorconfig) file.
-* My personal preference is to not use the -a or -m flags with git commit. Do what you want however.
+* Github will handle end of file complexity most of the time. If you don't understand this and the following bullet, don't worry about it, you will probably be fine.
+* Do not end a file with any character other than a newline. This is not a problem if you have [configured git correctly][] and you are using the [.editorconfig](https://github.com/Controlco/looseCode/blob/master/.editorconfig) file.
+* My personal preference is to not use the -a or -m flags with git commit. Do what you want however. I would suggest that you do it my way until you are completely comfortable with git.
 
     ```shell
     # good:
     > git add .
     > git commit
-    [save edits to the commit message file using the text editor that opens]
+    [save edits to the commit message file using the text editor that opens, by default vi]
 
     # discouraged:
     > git commit -a
@@ -288,7 +290,7 @@ When writing any block of code that is logically subordinate to the line immedia
     var ape;
     var bat;
 
-    // bad:
+    // bad, DO NOT do this:
     var cat,
         dog
 
@@ -300,6 +302,7 @@ When writing any block of code that is logically subordinate to the line immedia
 
 * Some people choose to use capitalization of the first letter in their variable names to indicate that they contain a [class][]. This capitalized variable might contain a function, a prototype, or some other construct that acts as a representative for the whole class.
 * Optionally, some people use a capital letter only on functions that are written to be run with the keyword `new`.
+* In JavaScript the above two items are usually the same. But, I prefer to use psuedo-classical instantiation.
 * Do not use all-caps for any variables.
 
 
@@ -358,7 +361,7 @@ When writing any block of code that is logically subordinate to the line immedia
 
 ### HTML
 
-* Do not include a `type=text/javascript"` attribute on script tags it is not neccessary.
+* Do not include a `type=text/javascript"` attribute on script tags, it is not neccessary.
 
     ```html
     <!-- good -->
