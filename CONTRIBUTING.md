@@ -3,6 +3,7 @@
 ## General Workflow
 
 1. Fork the repo
+1. Clone the repo down to your local machine
 1. Cut a namespaced feature branch from master
   - bug/...
   - feat/...
@@ -24,12 +25,16 @@
 
 ## Detailed Workflow
 
-### Fork the repo
+### Fork the repo and then clone the repo
 
-Use github’s interface to make a fork of the repo, then add that repo as an upstream remote:
+Use github’s interface to make a fork of the repo, clone it down to your local machine, and then add the organization's (not yours) repo as an upstream remote:
+
+``` bash
+git clone https://github.com/"your-name-here"/"repo-name-here".git
+```
 
 ```
-git remote add upstream https://github.com/IanConery/DeadDrop.git
+git remote add upstream https://github.com/"organization-name-here"/"repo-name-here".git
 ```
 
 ### Cut a namespaced feature branch from master
@@ -138,7 +143,7 @@ Thanks for contributing!
 
 1. Uphold the current code standard:
     - Keep your code [DRY][].
-    - Follow [STYLE-GUIDE.md](https://github.com/IanConery/DeadDrop/blob/master/STYLE-GUIDE.md)
+    - Follow [STYLE-GUIDE.md](https://github.com/Controlco/looseCode/blob/master/STYLE-GUIDE.md)
 1. Run the tests before submitting a pull request. No tests at the moment
 1. Tests are very, very important. Submit tests if your pull request contains
    new, testable behavior.
