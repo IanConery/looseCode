@@ -281,7 +281,7 @@ When writing any block of code that is logically subordinate to the line immedia
 ### Variable declaration
 
 * You MUST use a new var statement for each line you declare a variable on.
-* DO NOT break variable declarations onto mutiple lines (separated with commas). I hate this.
+* DO NOT break variable declarations onto mutiple lines (separated with commas). I hate this. It's not hard or time consuming to type `var`
 * Use a new line for each variable declaration.
 * See http://benalman.com/news/2012/05/multiple-var-statements-javascript/ for more details
 
@@ -294,7 +294,7 @@ When writing any block of code that is logically subordinate to the line immedia
     var cat,
         dog
 
-    // you better have a good reason to do this:
+    // bad, DO NOT do this either
     var eel, fly;
     ```
 
