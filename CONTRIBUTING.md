@@ -30,11 +30,11 @@
 Use github’s interface to make a fork of the repo, clone it down to your local machine, and then add the organization's (not yours) repo as an upstream remote:
 
 ``` bash
-git clone https://github.com/`your-name-here`/`repo-name-here`.git
+git clone https://github.com/"your-name-here"/"repo-name-here".git
 ```
 
 ```
-git remote add upstream https://github.com/`organization-name-here`/`repo-name-here`.git
+git remote add upstream https://github.com/"organization-name-here"/"repo-name-here".git
 ```
 
 ### Cut a namespaced feature branch from master
