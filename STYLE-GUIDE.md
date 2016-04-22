@@ -2,8 +2,8 @@
 
 When writing any block of code that is logically subordinate to the line immediately before and after it, that block should be indented two spaces more than the surrounding lines
 
-* We use two spaces, we do not use tabs. Convert your tabs to spaces.
-* Do not put any tab characters anywhere in your code. We use spaces, two of them.
+* My preference is to use two spaces instead of tabs.
+* Try not to put any tab characters anywhere in your code, convert your tabs to spaces.
 * Increase the indent level for all blocks by two extra spaces.
     * When a line opens a block, the next line starts 2 spaces further in than the line that opened
 
@@ -130,7 +130,7 @@ When writing any block of code that is logically subordinate to the line immedia
     }
     ```
 
-* I prefer function expressions over function declarations, obviously there are times when it makes sense to use declarations. I am not against them, so do what you will but I may ask you to fix/change your code to match the style.
+* I prefer function expressions over function declarations, obviously there are times when it makes sense to use declarations. I am not against them, so do what you will but please be consistant and match the style.
 
     ```javascript
     // good:
@@ -143,7 +143,7 @@ When writing any block of code that is logically subordinate to the line immedia
 
 ### Semicolons
 
-* Don't forget semicolons at the end of lines. There will be no discussion about this. We are not going to rely on the interpreter to put them where they belong for us.
+* Don't forget semicolons at the end of lines. We should not rely on the interpreter to put them where they belong for us as this can lead to broken code.
 
   ```javascript
   // good:
@@ -281,20 +281,20 @@ When writing any block of code that is logically subordinate to the line immedia
 ### Variable declaration
 
 * You MUST use a new var statement for each line you declare a variable on.
-* DO NOT break variable declarations onto mutiple lines (separated with commas). I hate this. It's not hard or time consuming to type `var`
+* DO NOT break variable declarations onto mutiple lines (separated with commas). The code becomes esaier to read and maintain when you add `var` before each variable declaration.
 * Use a new line for each variable declaration.
 * See http://benalman.com/news/2012/05/multiple-var-statements-javascript/ for more details
 
     ```javascript
-    // good:
+    // good, try to do this all the time:
     var ape;
     var bat;
 
-    // bad, DO NOT do this:
+    // bad, try not to do this:
     var cat,
         dog
 
-    // bad, DO NOT do this either
+    // bad, Try not to do this either
     var eel, fly;
     ```
 
@@ -302,8 +302,8 @@ When writing any block of code that is logically subordinate to the line immedia
 
 * Some people choose to use capitalization of the first letter in their variable names to indicate that they contain a [class][]. This capitalized variable might contain a function, a prototype, or some other construct that acts as a representative for the whole class.
 * Optionally, some people use a capital letter only on functions that are written to be run with the keyword `new`.
-* In JavaScript the above two items are usually the same. But, I prefer to use psuedo-classical instantiation.
-* Do not use all-caps for any variables.
+* In JavaScript the above two items are usually the same. But, that's becasuse I prefer to use psuedo-classical instantiation.
+* Please do not use all-caps for any variables.
 
 
 ### Minutia
